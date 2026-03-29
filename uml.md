@@ -1,0 +1,12 @@
+### Final UML Relationships Cheat Sheet for Design Patterns
+
+| # | Visual Symbol                          | Name                          | Relationship Type       | Meaning                                                                 | Strength     | Common in Design Patterns                  | Example |
+|---|----------------------------------------|-------------------------------|-------------------------|-------------------------------------------------------------------------|--------------|--------------------------------------------|---------|
+| 1 | Solid line + **Hollow Triangle** (▲)   | **Generalization / Inheritance** | "Is-a"                 | Class inherits from another class                                       | Strong       | Strategy, Factory, Adapter, Decorator      | `CreditCardStrategy` inherits `PaymentStrategy` |
+| 2 | **Dotted line** + **Hollow Triangle** (△) | **Realization / Implementation** | "Implements"           | Class **implements** an Interface                                       | Strong       | Strategy, Adapter, Observer                | Concrete classes implement `PaymentStrategy` interface |
+| 3 | Solid line + **Filled Diamond** (◆)    | **Composition**               | Strong "Has-a" + Ownership | Part cannot exist without Whole. If Whole dies, Part dies too          | Very Strong  | Adapter (holds Reader), Decorator          | Adapter owns Reader (filled diamond) |
+| 4 | Solid line + **Hollow Diamond** (◇)    | **Aggregation**               | Weak "Has-a"           | Whole has Parts, but Parts can exist independently                      | Medium       | Builder (Director has Builder)             | DocumentDirector has DocumentBuilder |
+| 5 | Solid line + Arrow (→)                 | **Association**               | "Knows about" / "Uses" | General relationship between two classes                                | Weak         | Most patterns                              | Client knows Context |
+| 6 | **Dotted line** + Arrow (- - - →)      | **Dependency**                | "Depends on"           | One class temporarily depends on another                                | Weakest      | Builder depends on Product, Context depends on Strategy | Builder → Document |
+| 7 | **Dotted line** + Arrow + `<<creates>>`| **Dependency (Creation)**     | "Creates"              | One class creates instances of another                                  | Weak         | Builder, Factory patterns                  | Builder creates Product |
+
